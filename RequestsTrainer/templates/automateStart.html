@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/requestNav.html" %}
+{% endblock navTabs %}
+
+
+{% block content %}
+{% markdown %}
+# Automation Challenge 2
+
+For this challenge you need to solve a sequence of tasks to get the flag.
+
+You are going to need to automate making the requests, to get the task data.
+You will also need to do some reasonably complex parsing of the HTML returned by each request.
+
+{% endmarkdown %}
+
+
+<form method="POST" action="{{ url_for('automateChallenge') }}">
+  <input type="hidden" name="csrf" value={{ csrf }}>
+  <button class="btn waves-effect waves-light" type="submit">Start</button>
+</form>
+
+{% endblock content %}

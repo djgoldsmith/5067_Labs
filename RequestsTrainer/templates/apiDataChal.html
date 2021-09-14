@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/requestNav.html" %}
+{% endblock navTabs %}
+
+{% block content %}
+
+<h1>Requests Data: API Challenge</h1>
+
+{% if feedback %}
+
+<ul>
+  {% for item in feedback %}
+  <ul>{{ item }}</ul>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
+{% if flag %}
+<h3>{{ flag }}</h3>
+{% endif %}
+
+{% endblock content %}

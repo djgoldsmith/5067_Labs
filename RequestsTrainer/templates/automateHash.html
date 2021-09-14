@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/requestNav.html" %}
+{% endblock navTabs %}
+
+
+{% block content %}
+<h1>Automation Challenge</h1>
+
+{% markdown %}
+For this challenge you need to calcuate the MD5 sum for the magic word you have been given.
+
+{% endmarkdown %}
+
+<div class="section">
+  <p>
+    What is the MD5 Sum for the following:
+  <p>
+    <span id="magicword">{{ magicword }}</span>
+  </p>
+
+
+  {% if feedback %}
+  <p><strong>{{ feedback }}</strong></p>
+  {% endif %}
+
+  {% if theFlag %}
+  <h3>{{ theFlag }}</h3>
+  {% endif %}
+  
+  <form method="POST">
+    <div class="row">
+      <div class="input-field col s12">
+	<input id="answer" name="answer" type="text">
+	<label for="answer">Answer</label>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit">Submit</button>
+  </form>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/requestNav.html" %}
+{% endblock navTabs %}
+
+
+{% block content %}
+<h1>Requests Challenge: User Agents</h1>
+
+<div class="section">
+<p>We have full control over the request Headers sent to the server.  This means we can modify them
+  to change the behaviour of the site</p>
+
+<p>For this challenge that meets the following criteria</p>
+
+<ul>
+  <li>Uses the <code>Googlebot/2.1</code> user agent</li>
+</ul>
+</div>
+
+{% if flag %}
+<div class="section">
+  <h3>Challenge Complete<h3>
+      {{ flag }}  
+</div>
+{% endif %}
+
+<h2>Request Parameters</h2>
+{% include "helpers/displayRequest.jinja2" %}
+
+{% endblock %}

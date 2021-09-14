@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/sessionNav.html" %}
+{% endblock navTabs %}
+
+
+{% block content %}
+<h1>Basic Auth Demo</h1>
+
+{% markdown %}
+
+In this example we are using HTTP Basic auth.
+
+Here the authentication details are sent as part of the HTTP request headers.
+If you look at the request you will see:
+
+```
+Authorization: Basic RXJlYnVzOkRhdmlu
+```
+
+The String **Basic RXJlYnVzOkRhdmlu** passed in the header gives the authentication details.
+
+**RXJlYnVzOkRhdmlu** is the username and pasword as a base64 encoded string.
+
+
+
+
+### Resetting the Page
+
+You can "Logout" of the basic auth using <a href="basiclogout" rel="noopener noreferrer" target="_blank"> this link</a>.
+
+**IMPORTANT** The logout is a bit Janky,  as Basic Auth doesn't really support it.
+The page will put some invalid credentials in the Header, forcing you to re-authenticate.
+
+{% endmarkdown %}
+
+
+
+{% endblock %}
