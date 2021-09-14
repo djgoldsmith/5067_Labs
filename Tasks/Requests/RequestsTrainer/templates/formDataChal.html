@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block navTabs %}
+{% include "helpers/requestNav.html" %}
+{% endblock navTabs %}
+
+{% block content %}
+
+<h1>Requests Data: Form Challenge</h1>
+
+<div class="section">
+  <form method="GET">
+    <div class="row">
+      <div class="input-field col s12">
+	<input id="user" name="user" type="text">
+	<label for="user">User Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+	<input id="date" type="date" name="date" class="validate">
+	<label for="date">Date</label>
+      </div>
+    </div>
+    <input type="hidden" name="hidden" value="A Hidden Item">
+     <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+  </form>
+</div>
+
+{% if feedback %}
+<h3>Incorrect Response </h3>
+<ul>
+  {% for item in feedback %}
+  <li>{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+
+{% if flag %}
+<h3>Have a Flag {{ flag }}</h3>
+{% endif %}
+
+{% endblock content %}
