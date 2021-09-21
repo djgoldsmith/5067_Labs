@@ -161,7 +161,8 @@ def automateSimple():
         logging.warning("My Hash %s", targetHash)
         logging.warning("User hash %s", userhash)
         randomString = flask.session["magicword"]
-
+        theFlag = None
+        
         #Now we do the comparison
         if userhash == targetHash:
             logging.warning("==> Hash is correct")
@@ -190,7 +191,8 @@ def automateSimple():
     
     return flask.render_template("automateHash.html",
                                  magicword = randomString,
-                                 feedback = feedback)
+                                 feedback = feedback,
+                                 theFlag = theFlag)
 
 
 
