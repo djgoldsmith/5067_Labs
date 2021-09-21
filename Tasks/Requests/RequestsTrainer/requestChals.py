@@ -149,6 +149,7 @@ def responsePage():
 def automateSimple():
 
     feedback = None
+    theFlag = None
     
     if flask.request.method == "POST":
         #Parse the data
