@@ -49,8 +49,8 @@ def basicAuth_Challenge():
 @app.route("/sessions/challenges/tokenAuth")
 @bauth.login_required
 def tokenAuth_Challenge():
-    flag = "5067{TEMP}"
-    return flask.render_template("tokenAuth_Challenge.html",
+    flag = "5067{Token_Acc3pted}"
+    return flask.render_template("tokenAuth_challenge.html",
                                  flag=flag)
 
 
@@ -66,7 +66,7 @@ def hiddenState():
             return flask.redirect(flask.url_for("hiddenState", user=username, admin=0))
 
 
-    flag = "5067{TEMP}"
+    flag = "5067{State_Mangled_In_F0rms}"
 
     return flask.render_template("urlState.html",
                                  uName = username,
