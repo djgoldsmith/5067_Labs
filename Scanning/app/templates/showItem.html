@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="row">
+
+  
+  <h1> {{ item.name }}</h1>
+
+  
+  <div class="col s6">
+    <div class="section">
+      <h5>Description</h5>
+      {{ item.description }}
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <ul>
+	<li>Category: {{item.category}}</li>
+	<li>Price: £{{item.price}}</li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+
+      {% if session["user"] %}
+      <a class="waves-effect waves-light btn" href="#">Add to Cart</a>
+      {% else %}
+      <p>Login to add this item to the cart</p>
+      <a class="waves-effect waves-light btn disabled" href="#">Add to Cart</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col s6">
+    <img class="responsive-img"  src="{{ url_for('static', filename=item.image)}}">
+  </div>
+    
+</div>
+
+{% endblock content %}
