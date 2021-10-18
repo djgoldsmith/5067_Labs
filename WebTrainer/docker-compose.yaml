@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    #image:  7024cem/webdb
+    image:  dang42/245-mysqldb
+    environment:
+      - MYSQL_ROOT_PASSWORD=cueh
+    ports:
+      - 3306:3306
+
+
+      
+  php:
+     image: dang42/245_web
+     ports:
+      - "80:80"
