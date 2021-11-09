@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  node:
+    build:
+      context: .
+      dockerfile: DockerDevel
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+    volumes:
+      - ./app/:/opt/app
+    entrypoint: ["nodemon", "server.js"]
+    #environment:
+    #  - FLASK_ENV=development
+      

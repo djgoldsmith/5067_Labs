@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Request a Gift</h1>
+
+<form method="post">
+  <div class="form-group">
+    <label for="nameEntry">Your Name</label>
+    <input class="form-control" id="nameEntry" name="name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="whichKing">King to bring the Gift</label>
+    <select class="form-control" id="whichKing" name="king">
+      <option value="Balthazar">Balthazar</option>
+      <option value="Melichor">Melichor</option>
+      <option value="Gaspar">Gaspar</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <!-- Whats the Equivelent of a Christmas Easter Egg, A Bolo Rei? -->
+    <label for="presentList">Gift Requests</label>
+    <textarea class="form-control" id="presentList" rows="3" name="gift"></textarea>
+  </div> 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% if message %}
+
+<h2>Success</h2>
+
+<p>{{message.name}} has asked {{message.king}} for the following gifts</p>
+<ul>
+  {% for item in message.gifts %}
+  <li>{{item}}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}
