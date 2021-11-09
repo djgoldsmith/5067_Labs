@@ -1,6 +1,8 @@
 import flask
 from flask import session
 import re
+import logging
+
 app = flask.Flask(__name__)
 app.config['SECRET_KEY'] = "FooBar"
 

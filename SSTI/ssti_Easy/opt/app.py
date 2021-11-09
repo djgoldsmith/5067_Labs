@@ -4,6 +4,7 @@ Very simple Flask App.  For Testing
 
 import flask
 import helper.processGifts as processGifts
+import logging
 app = flask.Flask(__name__)
 
 errorPage = """
