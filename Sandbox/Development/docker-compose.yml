@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  sandbox:
+    build: .
+    ports:
+      - "5000:5000"
+    expose:
+      - 5000
+#    deploy:
+#      restart_policy:
+#        condition: any
+#        delay: 5s
+#        max_attempts: 5
+#        window: 120s
